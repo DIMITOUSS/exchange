@@ -8,6 +8,7 @@ import ExchangeFormComponent from './components/ExchangeFormComponent';
 import TransactionHistoryComponent from './components/TransactionHistoryComponent';
 import AccountComponent from './components/AccountComponent';
 import KYCAMLComponent from './components/KYCAMLComponent';
+import Header from './components/Header';
 
 const theme = createTheme({
   palette: {
@@ -27,7 +28,10 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+      <Header />
+
         <Routes>
+
           <Route exact path="/" element={<HomeComponent />} />
           <Route path="/login" element={<AuthenticationComponent />} />
           <Route path="/exchange" element={<ExchangeFormComponent />} />

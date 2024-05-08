@@ -29,7 +29,7 @@ const TradingViewWidget = () => {
         }
       ],
       "showSymbolLogo": true,
-      "isTransparent": false,
+      "isTransparent": true,
       "displayMode": "adaptive",
       "colorTheme": "light",
       "locale": "en"

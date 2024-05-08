@@ -1,6 +1,6 @@
 // KYCAMLComponent.js
 import React from 'react';
-import { Typography, Button, Box, Container } from '@mui/material';
+import { Typography, Button,  Container } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { submitKYCAML } from '../Redux/kycamlSlice';
 import { makeStyles } from '@mui/styles';

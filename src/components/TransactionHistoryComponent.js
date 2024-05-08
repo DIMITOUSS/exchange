@@ -1,6 +1,6 @@
 // TransactionHistoryComponent.js
 import React from 'react';
-import { Typography, Box, Container } from '@mui/material';
+import { Typography,  Container } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { makeStyles } from '@mui/styles';
 

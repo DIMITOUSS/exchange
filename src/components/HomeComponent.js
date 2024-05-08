@@ -1,7 +1,6 @@
 // HomeComponent.js
 import React from 'react';
-import { Button, Typography, Box, Container, Paper } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import {  Typography, Container, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import TradingViewWidget from './TradingViewWidget';
 
@@ -41,9 +40,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[200],
     padding: theme.spacing(2),
   },
-  button: {
-    margin: theme.spacing(1),
-  },
 }));
 
 const HomeComponent = () => {
@@ -51,18 +47,12 @@ const HomeComponent = () => {
 
   return (
     <Container className={classes.root}>
-      <Box>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/login'> Login</Button>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/exchange'> Exchange</Button>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/transactions'> Transactions</Button>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/kycaml'> KYC/AML</Button>
-      </Box>
       <Paper className={classes.banner}>
-        <Typography variant="h5">Banner Section</Typography>
+        <TradingViewWidget/>
+
 
       </Paper>
       <Paper className={classes.hero}>
-        <TradingViewWidget/>
 
 
       </Paper>
