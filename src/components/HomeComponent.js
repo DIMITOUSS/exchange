@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Typography, Box, Container, Paper } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
+import TradingViewWidget from './TradingViewWidget';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,9 +53,12 @@ const HomeComponent = () => {
     <Container className={classes.root}>
       <Paper className={classes.banner}>
         <Typography variant="h5">Banner Section</Typography>
+
       </Paper>
       <Paper className={classes.hero}>
-        <Typography variant="h4">Hero Section</Typography>
+        <TradingViewWidget/>
+
+
       </Paper>
       <Typography variant="h4" gutterBottom>
         Welcome to our Currency Exchange Platform!
@@ -67,8 +71,11 @@ const HomeComponent = () => {
       </Box>
       <Paper className={classes.aside}>
         <Typography variant="h6">Aside Section</Typography>
+
       </Paper>
+      
     </Container>
+    
   );
 };
 
