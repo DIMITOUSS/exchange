@@ -51,6 +51,12 @@ const HomeComponent = () => {
 
   return (
     <Container className={classes.root}>
+      <Box>
+        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/login'> Login</Button>
+        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/exchange'> Exchange</Button>
+        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/transactions'> Transactions</Button>
+        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/kycaml'> KYC/AML</Button>
+      </Box>
       <Paper className={classes.banner}>
         <Typography variant="h5">Banner Section</Typography>
 
@@ -63,12 +69,7 @@ const HomeComponent = () => {
       <Typography variant="h4" gutterBottom>
         Welcome to our Currency Exchange Platform!
       </Typography>
-      <Box>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/login'> Login</Button>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/exchange'> Exchange</Button>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/transactions'> Transactions</Button>
-        <Button className={classes.button} variant="contained" color="primary" component={NavLink} to='/kycaml'> KYC/AML</Button>
-      </Box>
+      
       <Paper className={classes.aside}>
         <Typography variant="h6">Aside Section</Typography>
 
