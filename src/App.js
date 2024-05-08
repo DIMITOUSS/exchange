@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import HomeComponent from './components/HomeComponent';
+import AuthenticationComponent from './components/AuthenticationComponent';
+import ExchangeFormComponent from './components/ExchangeFormComponent';
+import TransactionHistoryComponent from './components/TransactionHistoryComponent';
+import AccountComponent from './components/AccountComponent';
+import KYCAMLComponent from './components/KYCAMLComponent';
 
-function App() {
+const theme = createTheme({
+  palette: {
+    background: {
+      default: '#f5f5f5',
+    },
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<HomeComponent />} />
+          <Route path="/login" element={<AuthenticationComponent />} />
+          <Route path="/exchange" element={<ExchangeFormComponent />} />
+          <Route path="/transactions" element={<TransactionHistoryComponent />} />
+          <Route path="/account" element={<AccountComponent />} />
+          <Route path="/kycaml" element={<KYCAMLComponent />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
