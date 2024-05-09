@@ -1,6 +1,7 @@
 // ExchangeRates.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Box, Typography } from '@mui/material';
 
 const ExchangeRates = () => {
   const [rates, setRates] = useState(null);
@@ -10,7 +11,6 @@ const ExchangeRates = () => {
 
     axios.get(apiEndpoint)
       .then(response => {
-        console.log(response)
         setRates(response.data.conversion_rates);
       })
       .catch(error => {
@@ -23,13 +23,13 @@ const ExchangeRates = () => {
   }
 
   return (
-    <div>
+    <Box sx={{ width: '100%', maxHeight: 200, overflowY: 'auto' }}>
       {Object.entries(rates).map(([currency, rate]) => (
-        <div key={currency}>
+        <Typography key={currency}>
           <strong>{currency}:</strong> {rate}
-        </div>
+        </Typography>
       ))}
-    </div>
+    </Box>
   );
 };
 

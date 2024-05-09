@@ -1,6 +1,6 @@
 // ExchangeFormComponent.js
 import React, { useState } from 'react';
-import { Typography, TextField, Button, Box, Container, styled } from '@mui/material';
+import { Typography, TextField, Button, Box, Container, styled, Select,  } from '@mui/material';
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   display: 'flex',
@@ -42,7 +42,18 @@ const ExchangeFormComponent = () => {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-        {/* Add dropdowns for selecting currencies */}
+        <Select
+          value={fromCurrency}
+          onChange={(e) => setFromCurrency(e.target.value)}
+        >
+          {/* Add your currency options here */}
+        </Select>
+        <Select
+          value={toCurrency}
+          onChange={(e) => setToCurrency(e.target.value)}
+        >
+          {/* Add your currency options here */}
+        </Select>
         <StyledButton variant="contained" color="primary" onClick={handleExchange}>Exchange</StyledButton>
       </StyledBox>
     </StyledContainer>

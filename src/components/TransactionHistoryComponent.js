@@ -1,6 +1,6 @@
 // TransactionHistoryComponent.js
 import React from 'react';
-import { Typography, Container, styled } from '@mui/material';
+import { Typography, Container, styled, List, ListItem, ListItemText } from '@mui/material';
 import { useSelector } from 'react-redux';
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -20,7 +20,13 @@ const TransactionHistoryComponent = () => {
       <Typography variant="h4" gutterBottom>
         Transaction History
       </Typography>
-      {/* Render transaction history data */}
+      <List>
+        {transactions.map((transaction, index) => (
+          <ListItem key={index}>
+            <ListItemText primary={`Transaction ${index + 1}: ${transaction.amount} ${transaction.fromCurrency} to ${transaction.toCurrency}`} />
+          </ListItem>
+        ))}
+      </List>
     </StyledContainer>
   );
 };
