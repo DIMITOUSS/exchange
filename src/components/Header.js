@@ -4,20 +4,28 @@ import { NavLink } from 'react-router-dom';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: 'flex',
-  gap: '1rem',
   justifyContent: 'center',
   boxShadow: 'none',
   marginBottom: '3rem',
 }));
 
+const StyledButton = styled(Button)(({ theme }) => ({
+    padding:0,
+    fontSize:'0.5rem',
+  '&:hover': {
+    backgroundColor: theme.palette.primary.dark,
+
+  },
+}));
+
 function Header() {
   return (
     <StyledBox> 
-      <Button variant="contained" color="primary" component={NavLink} to='/'> Home</Button>
-      <Button variant="contained" color="primary" component={NavLink} to='/login'> Login</Button>
-      <Button variant="contained" color="primary" component={NavLink} to='/exchange'> Exchange</Button>
-      <Button variant="contained" color="primary" component={NavLink} to='/transactions'> Transactions</Button>
-      <Button variant="contained" color="primary" component={NavLink} to='/kycaml'> KYC/AML</Button>
+      <StyledButton variant="contained" component={NavLink} to='/'> Home</StyledButton>
+      <StyledButton variant="contained" component={NavLink} to='/login'> Login</StyledButton>
+      <StyledButton variant="contained" component={NavLink} to='/exchange'> Exchange</StyledButton>
+      <StyledButton variant="contained" component={NavLink} to='/transactions'> Transactions</StyledButton>
+      <StyledButton variant="contained" component={NavLink} to='/kycaml'> KYC/AML</StyledButton>
     </StyledBox>
   );
 }

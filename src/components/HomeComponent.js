@@ -42,10 +42,10 @@ const StyledHero = styled(Paper)(({ theme }) => ({
 
 const StyledAside = styled(Paper)(({ theme }) => ({
   width: '200px',
-  height: '100%',
+  height: '10%',
   position: 'fixed',
   right: 0,
-  top: 0,
+  top: 14,
   backgroundColor: theme.palette.grey[200],
   padding: theme.spacing(2),
   zIndex:9999
@@ -67,7 +67,6 @@ const HomeComponent = () => {
       <StyledAside>
         <Typography variant="h6">About Our Platform</Typography>
         <Typography variant="body1">
-          Our platform offers real-time currency exchange rates, market news, and more. Whether you're an experienced trader or just getting started, we have the tools and information you need to make informed decisions.
         </Typography>
       </StyledAside>
 
