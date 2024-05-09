@@ -3,6 +3,20 @@ import React from 'react';
 import {  Typography, Container, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import TradingViewWidget from './TradingViewWidget';
+import TradingChart from './TradingChart';
+const chartData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'Stock Price',
+      data: [65, 59, 80, 81, 56, 55, 40],
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1,
+    },
+  ],
+};
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   banner: {
     width: '100%',
     height: '200px',
+    marginTop: theme.spacing(5),
     backgroundColor: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
     display: 'flex',
@@ -53,6 +68,8 @@ const HomeComponent = () => {
 
       </Paper>
       <Paper className={classes.hero}>
+      <h1>Trading Chart</h1>
+      <TradingChart data={chartData} />
 
 
       </Paper>

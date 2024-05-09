@@ -10,13 +10,13 @@ function Header() {
             display:'flex',
             gap:'1rem',
             justifyContent:'center',
-            boxShadow:'none'
+            boxShadow:'none',
+            marginBottom:'3rem'
             
 
         },
         appBar:{
             color:'white',
-            margin:'2rem',
             backgroundColor:'red',
             boxShadow:'none'
 
@@ -27,7 +27,6 @@ function Header() {
 
   return (
 
-   <AppBar className={classes.appBar} >
         <Box className={classes.button}> 
 <Button  variant="contained" color="primary" component={NavLink} to='/'> Home</Button>
 <Button  variant="contained" color="primary" component={NavLink} to='/login'> Login</Button>
@@ -36,7 +35,6 @@ function Header() {
 <Button  variant="contained" color="primary" component={NavLink} to='/kycaml'> KYC/AML</Button>
 </Box>
       
-</AppBar>
   )
 }
 
