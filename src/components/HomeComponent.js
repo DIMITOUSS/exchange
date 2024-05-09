@@ -1,89 +1,77 @@
 // HomeComponent.js
 import React from 'react';
-import {  Typography, Container, Paper } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { Typography, Container, Paper, styled } from '@mui/material';
 import TradingViewWidget from './TradingViewWidget';
-import TradingChart from './TradingChart';
-const chartData = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Stock Price',
-      data: [65, 59, 80, 81, 56, 55, 40],
-      fill: false,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1,
-    },
-  ],
-};
+import ExchangeRates from './ExchangeRates'; 
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: theme.palette.background.default,
-  },
-  banner: {
-    width: '100%',
-    height: '200px',
-    marginTop: theme.spacing(5),
-    backgroundColor: theme.palette.primary.main,
-    marginBottom: theme.spacing(2),
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  hero: {
-    width: '100%',
-    height: '300px',
-    backgroundColor: theme.palette.secondary.main,
-    marginBottom: theme.spacing(2),
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  aside: {
-    width: '200px',
-    height: '100%',
-    position: 'fixed',
-    right: 0,
-    top: 0,
-    backgroundColor: theme.palette.grey[200],
-    padding: theme.spacing(2),
-  },
+
+
+const StyledContainer = styled(Container)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100vh',
+  backgroundColor: theme.palette.background.default,
+}));
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  width: '100%',
+  height: '200px',
+  marginTop: theme.spacing(5),
+  backgroundColor: theme.palette.primary.main,
+  marginBottom: theme.spacing(2),
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+
+const StyledHero = styled(Paper)(({ theme }) => ({
+  width: '100%',
+  height: '300px',
+  backgroundColor: theme.palette.secondary.main,
+  marginBottom: theme.spacing(2),
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflowY:'auto',
+  
+  
+}));
+
+const StyledAside = styled(Paper)(({ theme }) => ({
+  width: '200px',
+  height: '100%',
+  position: 'fixed',
+  right: 0,
+  top: 0,
+  backgroundColor: theme.palette.grey[200],
+  padding: theme.spacing(2),
+  zIndex:9999
 }));
 
 const HomeComponent = () => {
-  const classes = useStyles();
-
   return (
-    <Container className={classes.root}>
-      <Paper className={classes.banner}>
+    <StyledContainer>
+      <StyledPaper>
         <TradingViewWidget/>
-
-
-      </Paper>
-      <Paper className={classes.hero}>
-      <h1>Trading Chart</h1>
-      <TradingChart data={chartData} />
-
-
-      </Paper>
+      </StyledPaper>
+      <StyledHero>
+        
+        <ExchangeRates  /> 
+      </StyledHero>
       <Typography variant="h4" gutterBottom>
         Welcome to our Currency Exchange Platform!
       </Typography>
-      
-      <Paper className={classes.aside}>
-        <Typography variant="h6">Aside Section</Typography>
+      <StyledAside>
+        <Typography variant="h6">About Our Platform</Typography>
+        <Typography variant="body1">
+          Our platform offers real-time currency exchange rates, market news, and more. Whether you're an experienced trader or just getting started, we have the tools and information you need to make informed decisions.
+        </Typography>
+      </StyledAside>
 
-      </Paper>
-      
-    </Container>
-    
+    </StyledContainer>
   );
 };
 
