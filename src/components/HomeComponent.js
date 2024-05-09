@@ -20,7 +20,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   width: '100%',
   height: '200px',
   marginTop: theme.spacing(5),
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: 'white',
   marginBottom: theme.spacing(2),
   display: 'flex',
   justifyContent: 'center',
@@ -30,7 +30,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 const StyledHero = styled(Paper)(({ theme }) => ({
   width: '100%',
   height: '300px',
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
   display: 'flex',
   justifyContent: 'center',
